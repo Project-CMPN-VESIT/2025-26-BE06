@@ -1,2 +1,40 @@
-/venv
+# Python specific
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Environment variables
 .env
+
+# Virtual environments
+venv/
+
+# Logs
+*.log
+
+# Models
+backend/models/models--sentence-transformers--all-MiniLM-L6-v2/
+backend/vectorstore/
+backend/core/models/
+backend/models/
+
+# Frontend specific
+frontend/node_modules/
+frontend/build/
+frontend/.pnp
+frontend.pnp.js
+frontend/coverage/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Node
+node_modules/
+
+# Miscellaneous
+.DS_Store

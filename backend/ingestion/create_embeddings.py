@@ -1,28 +1,38 @@
 import json
-from sentence_transformers import SentenceTransformer
 import faiss
-import numpy as np
+from sentence_transformers import SentenceTransformer
 from pathlib import Path
 import os
 from dotenv import load_dotenv
 load_dotenv()
 hf_token = os.getenv("HF_TOKEN")
-model = SentenceTransformer("all-MiniLM-L6-v2", token=hf_token)
 
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPT_DIR.parent
+
 CHUNKS_FILE = PROJECT_ROOT / "data" / "processed" / "chunks.json"
-VECTOR_DIR = PROJECT_ROOT / "vectorstore" / "faiss_index"
+VECTOR_DIR = PROJECT_ROOT / "vectorstore" / "faiss"
+
+model = SentenceTransformer(
+    "sentence-transformers/all-MiniLM-L6-v2",
+    cache_folder=str(PROJECT_ROOT / "models")
+)
 
 with open(CHUNKS_FILE, "r", encoding="utf-8") as f:
     chunks = json.load(f)
 
 texts = [c["content"] for c in chunks]
-embeddings = model.encode(texts, show_progress_bar=True)
+
+embeddings = model.encode(
+    texts,
+    show_progress_bar=True,
+    normalize_embeddings=True,
+    convert_to_numpy=True
+)
 
 dimension = embeddings.shape[1]
 index = faiss.IndexFlatL2(dimension)
-index.add(np.array(embeddings))
+index.add(embeddings)
 
 VECTOR_DIR.mkdir(parents=True, exist_ok=True)
 faiss.write_index(index, str(VECTOR_DIR / "index.faiss"))

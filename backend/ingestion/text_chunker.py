@@ -11,8 +11,8 @@ with open(INPUT_FILE, "r", encoding="utf-8") as f:
     docs = json.load(f)
 
 splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000,
-    chunk_overlap=150
+    chunk_size=600,
+    chunk_overlap=80
 )
 
 chunks = []

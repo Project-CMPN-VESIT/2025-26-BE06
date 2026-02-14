@@ -6,3 +6,7 @@ pymupdf
 ollama
 tqdm
 langchain-text-splitters
+flask
+crawl4ai
+pandas
+flask-apscheduler
