@@ -10,3 +10,4 @@ flask
 crawl4ai
 pandas
 flask-apscheduler
+flask-cors

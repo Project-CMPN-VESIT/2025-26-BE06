@@ -277,7 +277,6 @@ if __name__ == "__main__":
         func=run_automated_pipeline, 
         trigger='interval', 
         days=3,
-        next_run_time=datetime.now()
     )
     scheduler.init_app(app)
     scheduler.start()
