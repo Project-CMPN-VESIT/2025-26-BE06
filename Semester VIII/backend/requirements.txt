@@ -1,0 +1,13 @@
+langchain
+langchain-community
+sentence-transformers
+faiss-cpu
+pymupdf
+ollama
+tqdm
+langchain-text-splitters
+flask
+crawl4ai
+pandas
+flask-apscheduler
+flask-cors

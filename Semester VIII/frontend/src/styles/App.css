@@ -1,0 +1,111 @@
+:root {
+    /* Color Palette Sync */
+    --primary: #0f172a;       /* Deep Navy */
+    --primary-dark: #020617;
+    --accent: #334155;        /* Slate Accent */
+    --bg: #f8fafc;            /* Soft slate background */
+    --white: #ffffff;
+    --border: #e2e8f0;        
+    --text-main: #0f172a;
+    --text-secondary: #64748b;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    
+    /* Font Stack Sync */
+    --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    font-family: var(--font-main);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+.navbar {
+    background: var(--primary);
+    padding: 0 32px;
+    height: 64px;
+    color: white;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: var(--font-main); /* Force font sync */
+}
+
+.navbar-brand {
+    font-weight: 600; /* Match dashboard title weight */
+    font-size: 1.1rem;
+    letter-spacing: -0.025em;
+    margin-right: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    letter-spacing: 0.01em; /* Subtle modern spacing */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #f8fafc;
+}
+
+.navbar a.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.app-container {
+    display: flex;
+    height: calc(100vh - 64px);
+    font-family: var(--font-main);
+    background: var(--bg);
+}
+
+.sidebar {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    overflow: hidden;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+}
+
+.viewer-panel {
+    flex: 1;
+    background: var(--bg);
+    overflow-y: auto;
+}
+
+/* Scrollbar styling sync */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 20px;
+    border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}

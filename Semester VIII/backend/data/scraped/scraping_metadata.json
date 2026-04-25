@@ -1,0 +1,48 @@
+{
+  "versions": [
+    {
+      "id": "1d0fdfce",
+      "source": "housing",
+      "timestamp": "2026-02-10T20:07:58.280254",
+      "status": "completed",
+      "records_count": 161,
+      "files": [
+        "data\\scraped\\housing_raw_20260210_200758.txt",
+        "data\\scraped\\housing_processed_20260210_200758.csv"
+      ]
+    },
+    {
+      "id": "66e82f2f",
+      "source": "99acres",
+      "timestamp": "2026-02-10T20:06:36.662221",
+      "status": "completed",
+      "records_count": 135,
+      "files": [
+        "data\\scraped\\99acres_raw_20260210_200636.txt",
+        "data\\scraped\\99acres_processed_20260210_200636.csv"
+      ]
+    },
+    {
+      "id": "14433c16",
+      "source": "housing",
+      "timestamp": "2026-02-06T10:23:03.314446",
+      "status": "completed",
+      "records_count": 158,
+      "files": [
+        "data\\scraped\\housing_raw_20260206_102303.txt",
+        "data\\scraped\\housing_processed_20260206_102303.csv"
+      ]
+    },
+    {
+      "id": "8559388e",
+      "source": "99acres",
+      "timestamp": "2026-02-06T09:55:49.468393",
+      "status": "completed",
+      "records_count": 135,
+      "files": [
+        "data\\scraped\\99acres_raw_20260206_095549.txt",
+        "data\\scraped\\99acres_processed_20260206_095549.csv"
+      ]
+    }
+  ]
+}
